@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{219B69EB-2703-4695-ABA7-53F30CE0FCA7}</ProjectGuid>
+    <ProjectGuid>{EFD33601-260E-460C-9A8C-C67B23BACF11}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FormulaCS.StandardExcelFunctions</RootNamespace>
-    <AssemblyName>FormulaCS.StandardExcelFunctions</AssemblyName>
+    <RootNamespace>FormulaCS.Parser</RootNamespace>
+    <AssemblyName>FormulaCS.Parser</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,20 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr4.Runtime.Standard, Version=4.7.0.0, Culture=neutral, PublicKeyToken=e78b2c5abd1fcb3f">
+      <HintPath>..\..\packages\Antlr4.Runtime.Standard.4.7.0\lib\net35\Antlr4.Runtime.Standard.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MathsAndTrigonometry.cs" />
+    <Compile Include="FormulaBaseVisitor.cs" />
+    <Compile Include="FormulaLexer.cs" />
+    <Compile Include="FormulaParser.cs" />
+    <Compile Include="FormulaVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormulaCS.Common\FormulaCS.Common.csproj">
-      <Project>{35f702aa-0047-4554-8fe8-15ddcc155c83}</Project>
-      <Name>FormulaCS.Common</Name>
-    </ProjectReference>
+    <Content Include="Formula.g4" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

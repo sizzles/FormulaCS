@@ -2,7 +2,8 @@
 {
     public interface IFunctionArgs
     {
-        object Result { get; set; }
         IExpression[] Parameters { get; set; }
+        bool HasResult { get; }
+        object Result { get; set; }
     }
 }
