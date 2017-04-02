@@ -79,15 +79,18 @@ namespace FormulaCS.StandardExcelFunctions
                 return;
             }
 
+            var @double = StringConversion.ToDouble(arg1);
+            var negative = @double < 0;
+
             // This code snippet based on example at http://stackoverflow.com/a/13483008
-            var number = new decimal(StringConversion.ToDouble(arg1));
+            var @decimal = new decimal(Math.Abs(@double));
             var places = Convert.ToInt32(arg2);
             var factor = RoundFactor(places);
-            number *= factor;
-            number = Math.Ceiling(number);
-            number /= factor;
+            @decimal *= factor;
+            @decimal = Math.Ceiling(@decimal);
+            @decimal /= factor;
 
-            args.Result = Convert.ToDouble(number);
+            args.Result = Convert.ToDouble(negative ? -@decimal : @decimal);
         }
 
         /// <remarks>
@@ -115,15 +118,18 @@ namespace FormulaCS.StandardExcelFunctions
                 return;
             }
 
+            var @double = StringConversion.ToDouble(arg1);
+            var negative = @double < 0;
+
             // This code snippet based on example at http://stackoverflow.com/a/13483008
-            var number = new decimal(StringConversion.ToDouble(arg1));
+            var @decimal = new decimal(Math.Abs(@double));
             var places = Convert.ToInt32(arg2);
             var factor = RoundFactor(places);
-            number *= factor;
-            number = Math.Floor(number);
-            number /= factor;
+            @decimal *= factor;
+            @decimal = Math.Floor(@decimal);
+            @decimal /= factor;
 
-            args.Result = Convert.ToDouble(number);
+            args.Result = Convert.ToDouble(negative ? -@decimal : @decimal);
         }
     }
 }
