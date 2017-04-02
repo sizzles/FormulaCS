@@ -1,6 +1,7 @@
 /.idea/
 /.vs/
 /packages/
+~$*
 *.suo
 *.user
 *.DotSettings
