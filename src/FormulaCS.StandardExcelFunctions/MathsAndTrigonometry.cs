@@ -87,7 +87,7 @@ namespace FormulaCS.StandardExcelFunctions
             number = Math.Ceiling(number);
             number /= factor;
 
-            args.Result = number;
+            args.Result = Convert.ToDouble(number);
         }
 
         /// <remarks>
@@ -123,7 +123,7 @@ namespace FormulaCS.StandardExcelFunctions
             number = Math.Floor(number);
             number /= factor;
 
-            args.Result = number;
+            args.Result = Convert.ToDouble(number);
         }
     }
 }

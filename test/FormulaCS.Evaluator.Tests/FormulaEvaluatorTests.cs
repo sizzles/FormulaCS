@@ -27,31 +27,31 @@ namespace FormulaCS.Evaluator.Tests
         [Fact]
         public void EvaluatesMultiplication()
         {
-            Assert.Equal(6d, Eval("3*2"));
+            Assert.Equal(6.0, Eval("3*2"));
         }
 
         [Fact]
         public void EvaluatesDivision()
         {
-            Assert.Equal(2d, Eval("4/2"));
+            Assert.Equal(2.0, Eval("4/2"));
         }
 
         [Fact]
         public void EvaluatesAddition()
         {
-            Assert.Equal(6d, Eval("4+2"));
+            Assert.Equal(6.0, Eval("4+2"));
         }
 
         [Fact]
         public void EvaluatesSubtraction()
         {
-            Assert.Equal(2d, Eval("4-2"));
+            Assert.Equal(2.0, Eval("4-2"));
         }
 
         [Fact]
         public void EvaluatesPercentage()
         {
-            Assert.Equal(0.1d, Eval("10%"));
+            Assert.Equal(0.1, Eval("10%"));
         }
 
         [Fact]
@@ -76,34 +76,34 @@ namespace FormulaCS.Evaluator.Tests
         [Fact]
         public void EvaluatesUnary()
         {
-            Assert.Equal(-3d, Eval("-3"));
-            Assert.Equal(-4d, Eval("-(2+2)"));
-            Assert.Equal(2d, Eval("+(4/2)"));
-            Assert.Equal(-2d, Eval("+(4/-2)"));
-            Assert.Equal(2d, Eval("++++++2"));
+            Assert.Equal(-3.0, Eval("-3"));
+            Assert.Equal(-4.0, Eval("-(2+2)"));
+            Assert.Equal(2.0, Eval("+(4/2)"));
+            Assert.Equal(-2.0, Eval("+(4/-2)"));
+            Assert.Equal(2.0, Eval("++++++2"));
         }
 
         [Fact]
         public void EvaluatesFunction()
         {
-            Assert.Equal(4d, Eval("AddThem(2,2)"));
+            Assert.Equal(4.0, Eval("AddThem(2,2)"));
         }
 
         [Fact]
         public void EvaluatesParenthesis()
         {
-            Assert.Equal(4d, Eval("(2+2)"));
-            Assert.Equal(12d, Eval("2*(2+4)"));
+            Assert.Equal(4.0, Eval("(2+2)"));
+            Assert.Equal(12.0, Eval("2*(2+4)"));
         }
 
         [Fact]
         public void EvaluatesNumber()
         {
-            Assert.Equal(4d, Eval("4"));
-            Assert.Equal(4d, Eval("4.0"));
-            Assert.Equal(100000000000000000000d, Eval("1e20"));
-            Assert.Equal(100000000000000000000d, Eval("1e+20"));
-            Assert.Equal(0.00000000000000000001d, Eval("1e-20"));
+            Assert.Equal(4.0, Eval("4"));
+            Assert.Equal(4.0, Eval("4.0"));
+            Assert.Equal(100000000000000000000.0, Eval("1e20"));
+            Assert.Equal(100000000000000000000.0, Eval("1e+20"));
+            Assert.Equal(0.00000000000000000001, Eval("1e-20"));
         }
 
         [Fact]
@@ -115,10 +115,10 @@ namespace FormulaCS.Evaluator.Tests
         [Fact]
         public void EvaluatesPower()
         {
-            Assert.Equal(4d, Eval("2^2"));
-            Assert.Equal(64d, Eval("2^2^3"));
-            Assert.Equal(64d, Eval("(2^2)^3"));
-            Assert.Equal(256d, Eval("2^(2^3)"));
+            Assert.Equal(4.0, Eval("2^2"));
+            Assert.Equal(64.0, Eval("2^2^3"));
+            Assert.Equal(64.0, Eval("(2^2)^3"));
+            Assert.Equal(256.0, Eval("2^(2^3)"));
         }
 
         [Fact]

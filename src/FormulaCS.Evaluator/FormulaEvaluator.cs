@@ -3,12 +3,31 @@ using System.Collections.Generic;
 using Antlr4.Runtime;
 using FormulaCS.Common;
 using FormulaCS.Parser;
+using FormulaCS.StandardExcelFunctions;
 
 namespace FormulaCS.Evaluator
 {
     public class FormulaEvaluator
     {
         public readonly Dictionary<string, FunctionDelegate> Functions = new Dictionary<string, FunctionDelegate>(StringComparer.OrdinalIgnoreCase);
+
+        public void AddStandardFunctions()
+        {
+            AddFunctions(DateAndTime.FunctionDelegates);
+            AddFunctions(Logical.FunctionDelegates);
+            AddFunctions(LookupAndReference.FunctionDelegates);
+            AddFunctions(MathsAndTrigonometry.FunctionDelegates);
+            AddFunctions(Statistical.FunctionDelegates);
+            AddFunctions(Text.FunctionDelegates);
+        }
+
+        public void AddFunctions(Dictionary<string, FunctionDelegate> delegates)
+        {
+            foreach (var f in delegates)
+            {
+                Functions.Add(f.Key, f.Value);
+            }
+        }
 
         public object Evaluate(string formula)
         {

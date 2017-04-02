@@ -63,6 +63,10 @@
       <Project>{efd33601-260e-460c-9a8c-c67b23bacf11}</Project>
       <Name>FormulaCS.Parser</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FormulaCS.StandardExcelFunctions\FormulaCS.StandardExcelFunctions.csproj">
+      <Project>{219b69eb-2703-4695-aba7-53f30ce0fca7}</Project>
+      <Name>FormulaCS.StandardExcelFunctions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

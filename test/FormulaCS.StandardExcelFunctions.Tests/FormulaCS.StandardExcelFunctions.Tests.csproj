@@ -54,11 +54,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests.cs" />
+    <Compile Include="DateAndTimeTests.cs" />
+    <Compile Include="LogicalTests.cs" />
+    <Compile Include="LookupAndReferenceTests.cs" />
+    <Compile Include="MathsAndTrigonometryTests.cs" />
+    <Compile Include="StatisticalTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\FormulaCS.Evaluator\FormulaCS.Evaluator.csproj">
+      <Project>{5043c9c4-9116-4c9b-8f97-e1cc7ae65278}</Project>
+      <Name>FormulaCS.Evaluator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
