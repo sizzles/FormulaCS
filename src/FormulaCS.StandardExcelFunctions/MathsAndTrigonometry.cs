@@ -12,8 +12,17 @@ namespace FormulaCS.StandardExcelFunctions
         {
             FunctionDelegates = new Dictionary<string, FunctionDelegate>(StringComparer.OrdinalIgnoreCase)
             {
+//                {"LN", LnFunction},
+//                {"LOG", LogFunction},
+//                {"POWER", PowerFunction},
+//                {"PI", PiFunction},
+//                {"ROUND", RoundFunction},
                 {"ROUNDUP", RoundUpFunction},
-                {"ROUNDDOWN", RoundDownFunction}
+                {"ROUNDDOWN", RoundDownFunction},
+//                {"RADIANS", RadiansFunction},
+//                {"SQRT", SqrtFunction},
+//                {"SUM", SumFunction},
+//                {"TAN", TanFunction},
             };
         }
 
