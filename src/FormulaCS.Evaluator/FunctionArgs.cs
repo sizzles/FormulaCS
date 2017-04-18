@@ -12,7 +12,7 @@ namespace FormulaCS.Evaluator
 
         public object Result
         {
-            get => result;
+            get { return result; } 
             set
             {
                 result = value;
